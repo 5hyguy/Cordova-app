@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+       
+        <title>Hello World</title>
+         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+         <script type="text/javascript">
+		     function onLoad() {
+		checkConnection();
+		document.addEventListener("online", onOnline, false);
+			document.addEventListener("offline", onOffline, false);
+        //document.addEventListener("deviceready", onDeviceReady, false);
+		
+    }
+
+	
+	// my child browser code, the main source of my app content
+	function fire(){
+  var ref = cordova.InAppBrowser.open('http://www.geneithpharm.com/app/about.php', '_blank', 'location=no,zoom=no,hardwareback=no,clearsessioncache=no,clearcache=no');
+var myCallback = function(event) { alert(event.url); }
+ref.addEventListener('loadstart', inAppBrowserbLoadStart);
+ref.addEventListener('loadstop', inAppBrowserbLoadStop);
+ref.addEventListener('loaderror', inAppBrowserbLoadError);
+ref.addEventListener('exit', inAppBrowserbClose);
+}
+function onOffline() {
+	loaders();
+	
+    // Handle the offline event
+}
+function onResume() {
+	
+    }
+	function exiter() {
+		
+    }
+	
+	
+	
+	
+
+//online handler
+	function onOnline() {
+		//loader();
+		//setTimeout(function() { window.plugins.spinnerDialog.hide}, 6000);
+		setTimeout(function() { fire(); }, 6000);
+    // Handle the online event
+}
+//checking if there is a connection or not
+	function checkConnection() {
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.CELL]     = 'Cell generic connection';
+    states[Connection.NONE]     = 'No network connection';
+	
+
+    
+}
+
+ function inAppBrowserbLoadStart(event) 
+	 {
+		
+   window.plugins.spinnerDialog.show("Loading","Please wait", true);
+
+    }
+	    
+		 
+         
+		
+    
+	function inAppBrowserbLoadStop(event) {
+		throway();
+	
+        
+		
+    }
+	function throway(){
+		window.plugins.spinnerDialog.hide();
+	}
+	function inAppBrowserbLoadError(event) {
+		loaders();
+         
+		
+    }
+	 function inAppBrowserbClose(event) {
+	     //navigator.notification.activityStop();
+        exit();
+    }
+	
+		 
+         
+		
+
+    </script>
+    
+   
+   
+<script type="text/javascript">
+// my page spinner
+function loader()
+{
+window.plugins.spinnerDialog.show("Please wait","connecting to server", true);
+
+}
+</script>
+<script type="text/javascript">
+//my page spinner for error network
+function loaders()
+{
+window.plugins.spinnerDialog.show("Error","No Active connection", true);
+//setTimeout(function() {  alert("App is closing No active network!!");}, 2000);
+//setTimeout(function() {  exit()}, 2000);
+
+}
+</script>
+
+</script>
+    <meta charset="utf-8">
+    <style type="text/css">
+    body {
+	background-color: #000;
+}
+    </style>
+    </head>
+    <body onload="onLoad()">
+    <div class="app"><div id="deviceready" class="blink"></div>
+            
+            
+        </div>
+                     
+</body>
+</html>

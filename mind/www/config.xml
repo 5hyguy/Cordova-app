@@ -1,0 +1,85 @@
+<?xml version='1.1' encoding='utf-8'?>
+<widget id="com.famakin.UrbanDormz" vversionCode="10102" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+    <name>sample cordova app</name>
+
+    <description>
+ sample cordova app for connecting to an application online
+    </description>
+
+    <author href="#" email="wolexx007@yahoo.com">
+     Famakin Olawole Taiwo
+    </author>
+    <content src="index.html" />
+
+
+<!-- Requires cli-8.0.0 but we recommend using the latest version. -->
+<preference name="phonegap-version" value="cli-9.0.0" />
+
+<preference name="android-build-tool" value="gradle" />
+<preference name="android-minSdkVersion" value="19" />
+
+<preference name="android-maxSdkVersion" value="28" />
+    <preference name="android-targetSdkVersion" value="28" />
+	 <!---<preference name="android-minSdkVersion" value="7" />
+	 
+	 <preference name="orientation"                value="default" />
+<preference name="SplashScreen" value="splash" />
+<preference name="SplashScreenDelay" value="9000" />
+<preference name="SplashMaintainAspectRatio" value="true|false" /> 
+
+<preference name="loadUrlTimeoutValue" value="60000" />
+<feature name="http://api.phonegap.com/1.0/device"/>
+    <!<plugin name="cordova-plugin-whitelist" spec="1" />
+	<preference name="backgroundColor" value="0xff38c0f4" />
+<preference name="errorUrl" value="file:///android_asset/www/error.html" />
+<preference name="loglevel" value="DEBUG" /><gap:splash src="splash.png"  gap:platform="android" gap:density="ldpi"/><preference name="splashscreen" value="splash" />
+<allow-intent href="http://whitechapelandpartners.com/mind/*" />
+<allow-intent href="https://*.gstatic.com/*" />
+	<allow-intent href="http://*.gstatic.com/*" />
+	<allow-intent href="http://*.googleapis.com/*" />	<allow-intent href="https://*.googleapis.com/*" /><preference name="splashScreenDelay" value="12000" /> -->
+	
+		<icon src="icon.png" />
+    <access origin="*" />
+	<allow-navigation href="*" />
+	
+	
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+	<platform name="android">
+    
+</platform>
+
+ <plugin name="cordova-plugin-network-information" spec="1.1.0"  source="npm"/>
+<plugin name="cordova-plugin-dialogs"  source="npm" spec="1.2.0"  />
+
+
+<plugin name="cordova-plugin-device" spec="1.1.0"  source="npm"/>
+	
+	<preference name="xwalkVersion" value="org.xwalk:xwalk_core_library:14+" />
+<preference name="xwalkVersion" value="xwalk_core_library:14+" />
+<preference name="xwalkVersion" value="14+" />
+<preference name="xwalkVersion" value="14" />
+<plugin name="xenious-cordova-plugin-crosswalk-webview" source="npm" version="1.0.3"/>
+
+
+    
+	<plugin name="cordova-plugin-spinnerdialog"  source="npm"/>
+	<plugin name="cordova-plugin-whitelist" spec="1.2.0"  source="npm"/>
+	
+	
+
+	
+
+</widget>
